@@ -1,20 +1,20 @@
-import React from "react";
+import React from 'react';
 //Styling and Animation
-import styled from "styled-components";
-import { motion } from "framer-motion";
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
 //Redux
-import { useDispatch } from "react-redux";
-import { loadDetail } from "../actions/detailAction";
-import { Link } from "react-router-dom";
-import { smallImage } from "../util";
-import { popup } from "../animations";
+import { useDispatch } from 'react-redux';
+import { loadDetail } from '../actions/detailAction';
+import { Link } from 'react-router-dom';
+// import { smallImage } from "../util";
+import { popup } from '../animations';
 
 const Game = ({ name, released, image, id }) => {
   const stringPathId = id.toString();
   //Load Detail Handler
   const dispatch = useDispatch();
   const loadDetailHandler = () => {
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = 'hidden';
     dispatch(loadDetail(id));
   };
 
@@ -31,7 +31,7 @@ const Game = ({ name, released, image, id }) => {
         <p>{released}</p>
         <motion.img
           layoutId={`image ${stringPathId}`}
-          src={smallImage(image, 640)}
+          // src={smallImage(image, 640)}
           alt={name}
         />
       </Link>
